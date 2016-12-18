@@ -39,7 +39,7 @@ echo "Please enter your desired username (no spaces), then press [ENTER]: "
 read un
 useradd $un
 passwd $un
-cls
+clear
 echo User setup completed.
 ip=$(curl -s http://whatismijnip.nl |cut -d " " -f 5)
 echo "If you have a URL, please enter it below; otherwise, use your public IP.  Make sure to forward port 22 to this device. ["$ip"]: "
