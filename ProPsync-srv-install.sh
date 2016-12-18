@@ -49,7 +49,7 @@ if [ $dns = '' ]; then
 fi
 echo "Please enter where you would like the data stored by default ["$sr"]: "
 read sralt
-if [ ! [ $sralt = '' ] ]; then
+if [ ! $sralt = '' ]; then
   sr=$sralt
 fi
 if [ -d $sr ]; then
@@ -58,7 +58,7 @@ if [ -d $sr ]; then
   if [ $continue = '' ]; then
     continue='n'
   fi
-  if [ ! [ [ $continue = 'y' ] || [ $continue = 'Y' ] ] ]; then
+  if [ ! [ $continue = 'y' ] || [ $continue = 'Y' ] ]; then
     echo Installation canceled.
     exit
   else
