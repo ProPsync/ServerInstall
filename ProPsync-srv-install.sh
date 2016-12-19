@@ -40,6 +40,8 @@ read un
 useradd $un
 passwd $un
 clear
+mkdir /home/$un
+chown $un /home/$un
 echo User setup completed.
 ip=$(curl -s http://whatismijnip.nl |cut -d " " -f 5)
 echo "If you have a URL, please enter it below; otherwise, use your public IP."
