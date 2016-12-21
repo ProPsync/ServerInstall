@@ -49,23 +49,24 @@ echo "Make sure to forward port 22 and 80 to this device.  Or... if you only wan
 echo "You can also just forward port 22 to this device if you initially configure your client sync applications using the internal IP instead"
 echo "of your public IP or URL.  This is much more secure, but requires any client devices to be on the internal network for initial setup."
 echo -n "["$ip"]: "
+dns=''
 read dns
-if [ $dns = '' ]; then
-  dns=$ip
+if [ "$dns" = '' ]; then
+  dns="$ip"
 fi
 echo "Please enter where you would like the data stored by default ["$sr"]: "
 read sralt
-if [ ! $sralt = '' ]; then
-  sr=$sralt
+if [ ! "$sralt" = '' ]; then
+  sr="$sralt"
 fi
 if [ -d $sr ]; then
   echo "Directory already exists.  If you continue, all contents will be removed.  Do you want to continue?"
   echo -n "[n]: "
   read continue
-  if [ $continue = '' ]; then
+  if [ "$continue" = '' ]; then
     continue='n'
   fi
-  if [ ! [ $continue = 'y' ] || [ $continue = 'Y' ] ]; then
+  if [ ! [ "$continue" = 'y' ] || [ "$continue" = 'Y' ] ]; then
     echo Installation canceled.
     exit
   else
