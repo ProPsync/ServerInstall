@@ -88,4 +88,5 @@ echo '<prefrepo>'$sr$pref'</prefrepo>'>>/var/www/html/config.txt
 echo '<syncmedia>True</syncmedia>'>>/var/www/html/config.txt
 echo '<synclibrary>True</synclibrary>'>>/var/www/html/config.txt
 echo '<syncpref>True</syncpref>'>>/var/www/html/config.txt
+echo '<automode>True</automode>'>>/var/www/html/config.txt
 echo 'Installation completed.'
