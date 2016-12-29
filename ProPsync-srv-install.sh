@@ -99,7 +99,6 @@ chown www-data /var/www/auths
 chmod 755 /var/www/auths
 chown www-data /var/www/html/config.txt
 chmod 755 /var/www/html/config.txt
-clear
 echo 'Installation completed.'
 addusr='True'
 while [ $addusr = 'True' ]; do
