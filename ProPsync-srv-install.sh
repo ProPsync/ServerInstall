@@ -21,7 +21,7 @@ pref='pref.git'
 
 apt-get update
 apt-get -y upgrade
-apt-get install -y git apache2 php5 php5-ssh2
+apt-get install -y git curl apache2 php5 php5-ssh2
 service apache2 restart
 clear
 
