@@ -36,7 +36,7 @@ echo '                                  __/ |                '
 echo '                                 |___/                 '
 echo '                                                       '
 echo '                                                       '
-echo "Please enter your desired username (no spaces), then press [ENTER]: "
+echo "Please enter your desired admin username (no spaces), then press [ENTER]: "
 read un
 useradd $un
 passwd $un
@@ -99,4 +99,23 @@ chown www-data /var/www/auths
 chmod 755 /var/www/auths
 chown www-data /var/www/html/config.txt
 chmod 755 /var/www/html/config.txt
+clear
 echo 'Installation completed.'
+addusr='True'
+while [ $addusr = 'True' ]; do
+  echo 'Would you like to add additional users?'
+  echo -n "Y or N: "
+  read addusrprompt
+  if [ [ addusrprompt = 'Y' ] || [ addusrprompt = 'y' ] ]; then
+    echo "Please enter your desired admin username (no spaces), then press [ENTER]: "
+    read un
+    useradd $un
+    passwd $un
+    clear
+    mkdir /home/$un
+    chown $un /home/$un
+    echo User setup completed.
+  else
+    addusr='False'
+  fi
+done
