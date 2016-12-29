@@ -100,13 +100,14 @@ chown www-data /var/www/auths
 chmod 755 /var/www/auths
 chown www-data /var/www/html/config.txt
 chmod 755 /var/www/html/config.txt
+clear
 echo 'Installation completed.'
 addusr='True'
 while [ $addusr = 'True' ]; do
   echo 'Would you like to add additional users?'
   echo -n "Y or N: "
   read addusrprompt
-  if [ [ $addusrprompt = 'Y' ] || [ $addusrprompt = 'y' ] ]; then
+  if [ $addusrprompt = 'Y' ] || [ $addusrprompt = 'y' ]; then
     echo "Please enter your desired admin username (no spaces), then press [ENTER]: "
     read un
     useradd $un
