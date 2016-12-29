@@ -120,3 +120,4 @@ while [ $addusr = 'True' ]; do
     addusr='False'
   fi
 done
+echo "Setup completed.  If you want to limit what can be synced or how syncs can happen, visit " $dns
