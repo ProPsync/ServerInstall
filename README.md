@@ -53,6 +53,10 @@ During installation, the script must be run as root (sudo will probably not work
 
 ![Enter your storage root](https://downloads.semrauconsulting.com/propsync/readme-images/srvinstall/8-select_directory.png "Example of storage prompt")
 
-9\.  Once you have entered the storage root, you should see that the script initialized 3 empty Git repositories and it should state that installation completed.
+9\.  Once you have entered the storage root, you should see that the main installation completed.  It will ask you if you want to add additional users.  This is optional but recommended if multiple people will be using the sync application.
 
 ![Setup completed](https://downloads.semrauconsulting.com/propsync/readme-images/srvinstall/9-confirmation_of_completion.png "Example of completion confirmation")
+
+10\. Once all of your users have been added, you will get another setup confirmation.  It will give you the DNS name that you specified earlier - we recommend browsing to that URL in a web browser to confirm that the admin interface appears.  If you want to change global settings for the program, log in with one of the user accounts that you just created.
+
+![Last confirmation](https://downloads.semrauconsulting.com/propsync/readme-images/srvinstall/10-WebAdmin_confirm.png "Example of last completion confirmation")
