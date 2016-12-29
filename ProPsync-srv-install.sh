@@ -85,6 +85,7 @@ git init --bare
 cd $sr$pref
 git init --bare
 chmod -R 777 $sr
+rm -rf /var/www/html
 git clone https://github.com/ProPsync/AdminPage.git /var/www/html
 echo '<dns>'$dns'</dns>'>/var/www/html/config.txt
 echo '<mediarepo>'$sr$media'</mediarepo>'>>/var/www/html/config.txt
