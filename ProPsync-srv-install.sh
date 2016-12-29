@@ -21,7 +21,8 @@ pref='pref.git'
 
 apt-get update
 apt-get -y upgrade
-apt-get install -y git apache2
+apt-get install -y git apache2 php5 php5-ssh2
+service apache2 restart
 clear
 
 echo '                                                       '
@@ -84,6 +85,7 @@ git init --bare
 cd $sr$pref
 git init --bare
 chmod -R 777 $sr
+git clone https://github.com/ProPsync/AdminPage.git /var/www/html
 echo '<dns>'$dns'</dns>'>/var/www/html/config.txt
 echo '<mediarepo>'$sr$media'</mediarepo>'>>/var/www/html/config.txt
 echo '<libraryrepo>'$sr$library'</libraryrepo>'>>/var/www/html/config.txt
@@ -92,4 +94,9 @@ echo '<syncmedia>True</syncmedia>'>>/var/www/html/config.txt
 echo '<synclibrary>True</synclibrary>'>>/var/www/html/config.txt
 echo '<syncpref>True</syncpref>'>>/var/www/html/config.txt
 echo '<automode>True</automode>'>>/var/www/html/config.txt
+mkdir /var/www/auths
+chown www-data /var/www/auths
+chmod 755 /var/www/auths
+chown www-data /var/www/html/config.txt
+chmod 755 /var/www/html/config.txt
 echo 'Installation completed.'
